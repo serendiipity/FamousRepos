@@ -2,15 +2,13 @@ package com.example.mac.famousrepos.model;
 
 import com.google.gson.annotations.SerializedName;
 
-// class that holds repo information with serialization annotations for gson mapping
-
 public class RepoInfo {
 
     @SerializedName("name")
     private String name;
 
-    @SerializedName("login")
-    private String owner;
+    @SerializedName("owner")
+    private Owner owner;
 
     @SerializedName("stargazers_count")
     private String stars;
@@ -18,7 +16,7 @@ public class RepoInfo {
     @SerializedName("description")
     private String description;
 
-    public RepoInfo(String name, String owner, String description, String stars) {
+    public RepoInfo(String name, Owner owner, String description, String stars) {
         this.name = name;
         this.owner = owner;
         this.description = description;
@@ -29,7 +27,7 @@ public class RepoInfo {
         return name;
     }
 
-    public String getOwner() {
+    public Owner getOwner() {
         return owner;
     }
 
@@ -39,5 +37,19 @@ public class RepoInfo {
 
     public String getDescription() {
         return description;
+    }
+
+    class Owner {
+
+        @SerializedName("login")
+        private String login;
+
+        public Owner(String login) {
+            this.login = login;
+        }
+
+        public String getLogin() {
+            return login;
+        }
     }
 }
