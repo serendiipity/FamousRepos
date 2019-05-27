@@ -15,5 +15,9 @@ public class RepoList {
     public boolean incomplete;
 
     @SerializedName("items")
-    List<RepoInfo> repos = new ArrayList<>();
+    public List <RepoInfo> repos = new ArrayList<>();
+
+    public List <RepoInfo> getRepoList() {
+        return repos;
+    }
 }
