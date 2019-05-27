@@ -15,5 +15,5 @@ public interface GitHubApi {
     @GET(url)
 
     // query parameters for api request
-    Call <RepoList> repos(@Query("q") String date, @Query("sort") String sort, @Query("order") String order, @Query("page") String page);
+    Call <RepoList> getRepos(@Query("q") String date, @Query("sort") String sort, @Query("order") String order, @Query("page") String page);
 }
