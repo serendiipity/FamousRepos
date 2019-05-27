@@ -17,6 +17,16 @@ public class RepoList {
     @SerializedName("items")
     public List <RepoInfo> repos = new ArrayList<>();
 
+    private int currentPage = 1;
+
+    public int getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(int page) {
+        this.currentPage = page;
+    }
+
     public List <RepoInfo> getRepoList() {
         return repos;
     }

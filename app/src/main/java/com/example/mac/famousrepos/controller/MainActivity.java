@@ -59,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
         api = retrofit.create(GitHubApi.class);
 
         fetchRepos();
+
+        recyclerView.addOnScrollListener(new OnScrollListener() {
+            @Override
+            public void onLoadMore() {
+                fetchRepos();
+            }
+        });
     }
 
     private void fetchRepos() {
@@ -70,10 +77,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             String date = getDate();
+            int page = repoList.getCurrentPage();
 
             // make api call with query parameters as arguments
 
-            apiCall = api.getRepos("created:>" + date, "stars", "desc", Integer.toString(1));
+            apiCall = api.getRepos("created:>" + date, "stars", "desc", Integer.toString(page));
+
+            repoList.setCurrentPage(page + 1);
 
             apiCall.enqueue(new Callback <RepoList>() {
                 @Override
