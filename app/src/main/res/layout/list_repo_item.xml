@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="6dp">
 
@@ -14,43 +13,48 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/owner"
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="12sp"
                 android:layout_below="@+id/name"/>
+
 
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/owner"/>
+                android:layout_toRightOf="@+id/owner"
+                android:layout_below="@+id/name"
+                android:src="@drawable/star_icon"
+                android:tint="#5b6575"
+                android:layout_alignBottom="@id/stars"/>
 
             <TextView
                 android:id="@+id/stars"
-                app:layout_constraintStart_toEndOf="@+id/icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 android:layout_toRightOf="@+id/icon"
-                android:layout_below="@+id/owner"/>
+                android:layout_below="@+id/name"/>
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_below="@+id/stars"/>
+                android:textSize="14sp"
+                android:layout_below="@+id/owner"
+                android:paddingTop="10dp"/>
 
         </RelativeLayout>
 
